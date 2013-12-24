@@ -4,13 +4,16 @@ QPlotWidget
 A simple widget for plotting. Example usage can be found in the main function of QPlotWidget.py.
 
 The widget is created used the empty constructor QPlotWidget(). Each QPlotWidget contains a single axis. The view area of the axis is set by specifying the lower left and upper right corners: setAxisView(x_coord_lower_left, y_coord_lower_left, x_coord_upper_right, y_coord_upper_right). The view area can be changed at any time. The only other option for the axis currently implement is turning the numbering labels or off. To turn the numbering labels off, use:
+
     qPlotWidgetInstance.axis.axisTextEnabled = False
     qPlotWidgetInstance.axis.update()
 
 An arbitrary number of plots can be added to a given QPlotWidget. A plot is created by calling the Plot constructor with the instance of QPlotWidget:
+
     sinPlot = Plot(qPlotWidgetInstance)
 
 There are also several options that can be changed for the plot:
+
 	# Set the size of the marker in pixels
     sinPlot.setMarkerSize(markerSizeInPixels)
 
@@ -40,4 +43,4 @@ To add points, use plotInstance.addPoint([x,y]). A line will be drawn between ea
 		xPos = (x - 500/5)/(100.0/5)
 		sinPlot.addPoint([xPos, math.sin(xPos)])
 
-The performance is not great, so it is best to limit plots to around 1000 point if there is going to be a lot of resizing or the widget.
+The performance is not great, so it is best to limit plots to around 1000 points if there is going to be a lot of resizing or the widget.
